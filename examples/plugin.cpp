@@ -132,7 +132,7 @@ public:
         kimera_pipeline.fillRightFrameQueue(VIO::make_unique<VIO::Frame>(kimera_current_frame_id,
 																	cam->time.time_since_epoch().count(),
                                                                     right_cam_info, img1));
-
+        std::cout << "Camera information: " << cam->time.time_since_epoch().count() << std::endl;
 		// Ok this needs to be filed in a later task to dig up what sets errno in Kimera
 		assert(errno == 0);
 		kimera_pipeline.spin();
